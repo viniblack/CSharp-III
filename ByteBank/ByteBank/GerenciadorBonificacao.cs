@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ByteBank.Funcionarios;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,11 +7,19 @@ namespace ByteBank
 {
     public class GerenciadorBonificacao
     {
-        public double _totalBonificacao;
+        private double _totalBonificacao;
 
-        public void Registrar(Funcionarios funcionario)
+        public void Registrar(Funcionario funcionario)
         {
-            funcionario.GetBonificacao();
+            _totalBonificacao += funcionario.GetBonificacao();
+        }
+        public void Registrar(Diretor diretor)
+        {
+            _totalBonificacao += diretor.GetBonificacao();
+        }
+        public double GetTotalBonificacao()
+        {
+            return _totalBonificacao;
         }
     }
 }
