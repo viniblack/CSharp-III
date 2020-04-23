@@ -10,6 +10,13 @@ namespace ByteBank.Funcionarios
         {
             Console.WriteLine("Criando DIRETOR");
         }
+        public string Senha { get; set; }
+
+        public bool Autenticar(string senha)
+        {
+            return Senha == senha;
+        }
+
         public override void AumentarSalario()
         {
             Salario *= 1.15;
